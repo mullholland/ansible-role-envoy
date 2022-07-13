@@ -61,7 +61,7 @@ jobs:
       - name: molecule test
         run: scenario=default ansible=current platform=${{ matrix.platform }} command=test /opt/molecule.sh
 
-  "default_next":
+  "default_development":
     runs-on: ubuntu-20.04
     needs:
       - linting
@@ -75,4 +75,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: molecule test
-        run: scenario=default ansible=next platform=${{ matrix.platform }} command=test /opt/molecule.sh
+        run: scenario=default ansible=development platform=${{ matrix.platform }} command=test /opt/molecule.sh
