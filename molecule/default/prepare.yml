@@ -9,4 +9,3 @@
       ansible.builtin.package:
         name: "xz-utils"
         state: present
-

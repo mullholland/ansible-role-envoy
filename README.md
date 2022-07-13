@@ -156,7 +156,6 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
       ansible.builtin.package:
         name: "xz-utils"
         state: present
-
 ```
 
 
