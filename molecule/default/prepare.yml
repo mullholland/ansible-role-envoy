@@ -5,14 +5,16 @@
   gather_facts: true
 
   tasks:
-    - name: install xz-utils
+    - name: Debian | Install xz-utils
       ansible.builtin.package:
         name: "xz-utils"
         state: present
       when: ansible_os_family == "Debian"
 
-    - name: install xz-libs
+    - name: RedHat | Install xz
       ansible.builtin.package:
-        name: "xz"
+        name:
+          - "xz"
+          - "tar"
         state: present
       when: ansible_os_family == "RedHat"
