@@ -5,5 +5,8 @@
   gather_facts: true
 
   tasks:
-    - name: check if connection still works
-      ansible.builtin.ping:
+    - name: install xz-utils
+      ansible.builtin.package:
+        name: "xz-utils"
+        state: present
+

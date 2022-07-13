@@ -152,8 +152,11 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
   gather_facts: true
 
   tasks:
-    - name: check if connection still works
-      ansible.builtin.ping:
+    - name: install xz-utils
+      ansible.builtin.package:
+        name: "xz-utils"
+        state: present
+
 ```
 
 
