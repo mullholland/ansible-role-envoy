@@ -4,6 +4,7 @@
     url: "{{ envoy_download_url }}"
     dest: "{{ envoy_download_path }}"
     checksum: "{{ envoy_checksum | default(omit) }}"
+    mode: "0644"
   register: _download_archive
   until: _download_archive is succeeded
   retries: 5
@@ -53,4 +54,4 @@
     - reload systemd
     - restart envoy
   when:
-   - envoy_systemd
+    - envoy_systemd

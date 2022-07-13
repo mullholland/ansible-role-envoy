@@ -1,7 +1,7 @@
 ---
 - name: reload systemd
   ansible.builtin.systemd:
-    daemon_reexec: yes
+    daemon_reexec: true
 
 - name: restart envoy
   ansible.builtin.service:
@@ -9,4 +9,4 @@
     state: "restarted"
     enabled: true
   when:
-   - envoy_systemd
+    - envoy_systemd
