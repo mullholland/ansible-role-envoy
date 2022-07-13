@@ -9,3 +9,10 @@
       ansible.builtin.package:
         name: "xz-utils"
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: install xz-libs
+      ansible.builtin.package:
+        name: "xz"
+        state: present
+      when: ansible_os_family == "RedHat"

@@ -156,6 +156,13 @@ The machine needs to be prepared in CI this is done using `molecule/default/prep
       ansible.builtin.package:
         name: "xz-utils"
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: install xz-libs
+      ansible.builtin.package:
+        name: "xz"
+        state: present
+      when: ansible_os_family == "RedHat"
 ```
 
 
