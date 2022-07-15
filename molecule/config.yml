@@ -4,7 +4,7 @@ molecule_exceptions:
     reason: "Current envoy version (1.22) not supported on CentOS 7"
 molecule_scenarios:
   - scenario: "default"
-    ansible: ["previous", "current", "development"]
+    ansible: ["previous", "current"]
     platforms:
       - "debian10"
       - "debian11"
