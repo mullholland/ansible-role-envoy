@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Installs an configures envoy
+  homepage: https://mullholland.net
+  topics: cloud, networking, system, ansible, molecule, tox, playbook

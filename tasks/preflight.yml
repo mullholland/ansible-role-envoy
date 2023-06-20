@@ -1,12 +1,12 @@
 ---
-- name: Check if already installed
+- name: preflight | Check if already installed
   ansible.builtin.stat:
     path: "{{ envoy_bin_path }}/envoy"
   changed_when: false
   check_mode: false
   register: envoy_is_installed
 
-- name: Check current version
+- name: preflight | Check current version
   ansible.builtin.command: "{{ envoy_bin_path }}/envoy --version"
   changed_when: false
   failed_when: false

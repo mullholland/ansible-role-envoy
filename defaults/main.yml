@@ -3,7 +3,6 @@ envoy_bin_path: "/usr/local/bin"
 
 # Disabled if installed as sidecar servie for example consul usage
 # https://learn.hashicorp.com/tutorials/consul/consul-terraform-sync-intro?in=consul/network-infrastructure-automation#install-envoy-optional
-envoy_enable_conf: false
 envoy_conf_path: "/etc/envoy"
 
 envoy_user: "envoy"
@@ -25,7 +24,6 @@ envoy_unarchive_creates: "/tmp/envoy-v{{ envoy_version }}-{{ envoy_arch }}/bin/e
 
 # Create a systemd servicefile
 envoy_systemd: false
-envoy_systemd_enabled: true
 
 # will be used with `to_nice_yaml`
 envoy_config: []
