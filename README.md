@@ -110,11 +110,18 @@ envoy_system_user: true
 
 # Download
 # https://archive.tetratelabs.io/envoy/envoy-versions.json
-envoy_version: "1.22.2"
-envoy_arch: "linux-amd64"
+envoy_version: "1.17.0"
+envoy_architecture_map:
+  amd64: amd64
+  x86_64: amd64
+  armv7l: arm
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
+envoy_arch: "linux-{{ envoy_architecture_map[ansible_architecture] }}"
 # optional
 # clear if unused
-envoy_checksum: "sha256:fbd2460189f330a6b1e6b4ff79b4604dff1847091d4abbdda2c6b3894fadb396"
+# envoy_checksum: "sha256:fbd2460189f330a6b1e6b4ff79b4604dff1847091d4abbdda2c6b3894fadb396"
 envoy_download_url: "https://archive.tetratelabs.io/envoy/download/v{{ envoy_version }}/envoy-v{{ envoy_version }}-{{ envoy_arch }}.tar.xz"
 envoy_download_path: "/tmp/envoy-v{{ envoy_version }}-{{ envoy_arch }}.tar.xz"
 envoy_unarchive_dest: "/tmp"
@@ -186,7 +193,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/m
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/repository/docker/mullholland/docker-centos-systemd/general)|all|
+|[EL](https://hub.docker.com/repository/docker/mullholland/docker-centos-systemd/general)|8, 9|
 |[Amazon](https://hub.docker.com/repository/docker/mullholland/docker-amazonlinux-systemd/general)|Candidate|
 |[Fedora](https://hub.docker.com/repository/docker/mullholland/docker-fedora-systemd/general)|all|
 |[Ubuntu](https://hub.docker.com/repository/docker/mullholland/docker-ubuntu-systemd/general)|all|
