@@ -1,10 +1,10 @@
 ---
-- name: Add the envoy group
+- name: prerequisite | Add the envoy group
   ansible.builtin.group:
     name: "{{ envoy_group }}"
     state: present
 
-- name: Add the envoy user
+- name: prerequisite | Add the envoy user
   ansible.builtin.user:
     name: "{{ envoy_user }}"
     group: "{{ envoy_group }}"
@@ -14,7 +14,7 @@
     shell: /sbin/nologin
     state: present
 
-- name: create envoy conf directory
+- name: prerequisite | create envoy conf directory
   ansible.builtin.file:
     path: "{{ envoy_conf_path }}"
     state: directory

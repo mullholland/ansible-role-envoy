@@ -1,12 +1,12 @@
 ---
 - name: preflight checks
-  include_tasks: "preflight.yml"
+  ansible.builtin.include_tasks: "preflight.yml"
 
 - name: prerequisite
-  include_tasks: "prerequisite.yml"
+  ansible.builtin.include_tasks: "prerequisite.yml"
 
 - name: install envoy
-  include_tasks: "install.yml"
+  ansible.builtin.include_tasks: "install.yml"
 
 - name: create envoy config
-  include_tasks: "config.yml"
+  ansible.builtin.include_tasks: "config.yml"
